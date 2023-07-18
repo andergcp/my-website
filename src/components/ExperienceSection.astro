@@ -1,0 +1,43 @@
+---
+import ExperienceCard from "./ExperienceCard.astro";
+const experienceList = [
+  {
+    title: "Title",
+    description: "Job description",
+    company: "Banco Davivienda",
+    startDate: "2019-01-01",
+    endDate: "2020-01-01",
+  },
+  {
+    title: "Title2",
+    description: "Job description",
+    company: "Banco Davivienda",
+    startDate: "2019-01-01",
+    endDate: "2020-01-01",
+  },
+  {
+    title: "Title3",
+    description: "Job description",
+    company: "Banco Davivienda",
+    startDate: "2019-01-01",
+    endDate: "2020-01-01",
+  },
+  {
+    title: "Title4",
+    description: "Job description",
+    company: "Banco Davivienda",
+    startDate: "2019-01-01",
+    endDate: "2020-01-01",
+  },
+];
+---
+
+{/* This is an astro component to talk about my professional experience */}
+<section class="flex h-screen py-10">
+  <div class="flex flex-col w-2/3 px-10 py-12 font-bold">
+    <h1 class="text-6xl px-10">Experiencia</h1>
+    <ul>
+      {experienceList.map((experience) => <ExperienceCard {...experience} />)}
+    </ul>
+  </div>
+</section>

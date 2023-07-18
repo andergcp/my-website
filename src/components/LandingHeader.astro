@@ -1,0 +1,46 @@
+---
+import LogoWhite from "./Logo/Logo-white.astro";
+import Linkedin from "./Icons/Linkedin.astro";
+import Github from "./Icons/Github.astro";
+---
+
+<header
+  id="landing-header"
+  class="py-5 px-10 flex items-center top-0 w-full justify-between z-40 text-black h-20 fixed bg-white opacity-90"
+>
+  <div class="header__logo flex flex-grow basis-0">
+    <a href="/">
+      <LogoWhite />
+    </a>
+  </div>
+  <nav>
+    <ul class="flex [&>li>a]:px-8 [&>li>a]:py-2">
+      <li>
+        <a
+          href="https://www.linkedin.com/in/andergcp/"
+          class="linkedin"
+          rel="me"
+          target="_blank"
+          title="Get professional on LinkedIn"><Linkedin /></a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/andergcp"
+          class="github"
+          rel="me"
+          target="_blank"
+          title="Check out my code on GitHub"><Github /></a
+        >
+      </li>
+    </ul>
+  </nav>
+  <nav class="flex flex-grow basis-0 justify-end">
+    <ul
+      class="flex text-base [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+    >
+      <li><a href="#projects"> Proyectos</a></li>
+      <li><a href="#contact"> Contacto</a></li>
+    </ul>
+  </nav>
+</header>

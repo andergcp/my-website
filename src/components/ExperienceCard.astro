@@ -1,0 +1,13 @@
+---
+const { title, description, company, startDate, endDate } = Astro.props;
+---
+
+{/* Card component for professional experience */}
+<div class="flex">
+  <h1>{title}</h1>
+  <div class="flex flex-col">
+    <h2>{company}</h2>
+    <h3>{startDate} - {endDate}</h3>
+    <p>{description}</p>
+  </div>
+</div>
