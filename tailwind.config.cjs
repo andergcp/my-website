@@ -9,6 +9,12 @@ module.exports = {
       fontFamily: {
         sans: ["Manrope Variable", ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        'main-titles': '#FF7F5B',
+        'secondary-titles': '#E8F9FD',
+        'main-bg': '#FFFFFF',
+        'secondary-bg':'#D2EBCD',
+      },
     },
   },
   plugins: [],
