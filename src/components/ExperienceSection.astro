@@ -1,43 +1,77 @@
 ---
-import ExperienceCard from "./ExperienceCard.astro";
-const experienceList = [
+import ExperienceCard from "./ExperienceCard";
+import Section from "./Section.astro";
+  
+const experienceListFirst = [
   {
-    title: "Title",
+    title: "Mid-Software Developer",
     description: "Job description",
-    company: "Banco Davivienda",
-    startDate: "2019-01-01",
-    endDate: "2020-01-01",
+    company: "Pandas",
+    startDate: "2022",
+    endDate: "2023",
   },
   {
-    title: "Title2",
+    title: "Software Engineer",
     description: "Job description",
-    company: "Banco Davivienda",
-    startDate: "2019-01-01",
-    endDate: "2020-01-01",
+    company: "Blackboard",
+    startDate: "2020",
+    endDate: "2022",
   },
   {
-    title: "Title3",
+    title: "Full-Stack Software Engineer",
     description: "Job description",
-    company: "Banco Davivienda",
-    startDate: "2019-01-01",
-    endDate: "2020-01-01",
+    company: "Holberton School",
+    startDate: "2020",
+    endDate: "2020",
   },
   {
-    title: "Title4",
+    title: "Monitor - Teaching Assistant",
+    description: "Job description",
+    company: "Holberton School",
+    startDate: "2020",
+    endDate: "2020",
+  },
+  {
+    title: "Administrador - propietario",
+    description: "Job description",
+    company: "Mayorista de Helados Caspri",
+    startDate: "2017",
+    endDate: "2020",
+  },
+  {
+    title: "Analista de producto - Crédito de vehículo personal",
     description: "Job description",
     company: "Banco Davivienda",
-    startDate: "2019-01-01",
-    endDate: "2020-01-01",
+    startDate: "2017",
+    endDate: "2017",
+  },
+  {
+    title: "Profesional Comercial Daviplata",
+    description: "Job description",
+    company: "Banco Davivienda",
+    startDate: "2015",
+    endDate: "2017",
+  },
+  {
+    title: "Practicante Universitario - Captación Banca Personal",
+    description: "Job description",
+    company: "Banco Davivienda",
+    startDate: "2015",
+    endDate: "2015",
   },
 ];
 ---
-
 {/* This is an astro component to talk about my professional experience */}
-<section class="flex h-screen py-10">
-  <div class="flex flex-col w-2/3 px-10 py-12 font-bold">
-    <h1 class="text-6xl px-10">Experiencia</h1>
+<Section desktopDir="col">
+  <h1 class="text-3xl text-main-titles md:text-5xl">Experiencia</h1>
+  <div class="flex flex-col w-full font-bold md:w-[70%]">
     <ul>
-      {experienceList.map((experience) => <ExperienceCard {...experience} />)}
+      {
+        experienceListFirst.map((experience) => (
+          <ExperienceCard {...experience} client:visible/>
+          <hr class="border-gray-300 pt-10" />
+        ))
+      }
     </ul>
   </div>
-</section>
+</Section>
