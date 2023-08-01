@@ -1,13 +1,28 @@
 ---
-const { title, description, company, startDate, endDate } = Astro.props;
+const {experience} = Astro.props
 ---
-
-{/* Card component for professional experience */}
-<div class="flex">
-  <h1>{title}</h1>
-  <div class="flex flex-col">
-    <h2>{company}</h2>
-    <h3>{startDate} - {endDate}</h3>
-    <p>{description}</p>
+<!-- Card component for showing my working experience -->
+<li class="flex flex-col [&>div]:p-4 shadow-lg md:[&>div]:p-8 md:flex-row">
+  <div class="bg-tertiary-bg md:w-1/4">
+    <h2 class="text-lg font-semibold">{experience.company}</h2>
+    <span class="text-sm">{experience.startDate}-{experience.endDate}</span>
   </div>
-</div>
+  <div class="bg-main-bg md:w-3/4 [&>ul]:px-4">
+    <h3 class="font-semibold">{experience.title}</h3>
+    <p class="text-sm">{experience.description}</p>
+    <br>
+    <h3 class="font-semibold">Funciones</h3>
+    <ul class="list-disc">
+      {experience.functions.map((f: string) => (
+        <li class="text-sm">{f}</li>
+      ))} 
+    </ul>
+    <br>
+    <h3 class="font-semibold">Logros</h3>
+    <ul class="list-disc">
+      {experience.achievements.map((a: string) => (
+        <li class="text-sm">{a}</li>
+      ))}
+    </ul>
+  </div>
+</li>

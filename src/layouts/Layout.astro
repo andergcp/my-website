@@ -3,7 +3,7 @@
 import "@fontsource-variable/manrope";
 
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -11,37 +11,46 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			name="description"
-			content="Sitio web de Anderson Castiblanco Prieto, administrador de empresas y desarrollador de software fullstack"
-		/>
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Sitio web de Anderson Castiblanco Prieto, administrador de empresas y desarrollador de software fullstack"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-background-color">
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			#da62c4 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #f6f6f6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-			DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+  :root {
+    --accent: 124, 58, 237;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      #da62c4 30%,
+      white 60%
+    );
+    --section-padding: 10%;
+  }
+  .px-section {
+    padding-left: var(--section-padding);
+    padding-right: var(--section-padding);
+  }
+  /* html {
+    font-family: system-ui, sans-serif;
+    background-color: #FEFBF6;
+  } */
+  /* h1 {
+    color: #50D890;
+    color: main-titles;
+  }
+  h2 {
+    color: #4F98CA;
+    color: #A5E9E1;
+  } */
 </style>

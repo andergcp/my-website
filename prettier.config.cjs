@@ -1,6 +1,6 @@
 // prettier.config.js
 module.exports = {
-  printWidth: 100,
+	printWidth: 100,
 	semi: false,
 	singleQuote: true,
 	jsxSingleQuote: true,
@@ -16,5 +16,5 @@ module.exports = {
 		}
 	],
 	endOfLine: 'lf',
-  plugins: ["prettier-plugin-tailwindcss"],
-};
+	plugins: ['prettier-plugin-tailwindcss']
+}

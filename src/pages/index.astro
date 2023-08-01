@@ -1,34 +1,24 @@
 ---
-import AboutMeSection from "../components/AboutMeSection.astro";
-import HeroSection from "../components/HeroSection.astro";
-import ExperienceSection from "../components/ExperienceSection.astro";
-import LandingHeader from "../components/LandingHeader.astro";
+import AboutMeSection from "../components/Sections/AboutMeSection.astro";
+import HeroSection from "../components/Sections/HeroSection.astro";
+import ExperienceSection from "../components/Sections/ExperienceSection.astro";
+import LandingHeader from "../components/Sections/LandingHeader.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Anderson Castiblanco">
   <LandingHeader />
-  <main class="snap-y snap-mandatory relative w-full h-screen overflow-auto">
-    <div class="snap-center">
-      <HeroSection />
-    </div>
-    <div class="snap-center">
-      <AboutMeSection />
-    </div>
-    <div class="snap-center">
-      <ExperienceSection />
-    </div>
+  <!-- <main class="snap-y snap-mandatory relative w-full h-full"> -->
+  <main class="relative w-full h-full"></main>
+    <HeroSection />
+    <AboutMeSection />
+    <ExperienceSection />
   </main>
 </Layout>
-<!-- 
+
 <style>
-	main {
-		margin: 0;
-		padding: 0;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 800;
-		margin: 0;
-	}
-</style> -->
+  main {
+    margin: 0;
+    padding: 0;
+  }
+</style>

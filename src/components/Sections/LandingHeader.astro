@@ -1,19 +1,19 @@
 ---
-import LogoWhite from "./Logo/Logo-white.astro";
-import Linkedin from "./Icons/Linkedin.astro";
-import Github from "./Icons/Github.astro";
+import LogoWhite from "../Logo/Logo-white.astro";
+import Linkedin from "../Icons/Linkedin.astro";
+import Github from "../Icons/Github.astro";
 ---
 
 <header
   id="landing-header"
-  class="py-5 px-10 flex items-center top-0 w-full justify-between z-40 text-black h-20 fixed bg-white opacity-90"
+  class="py-5 px-6 flex items-center top-0 w-screen justify-between z-40 text-black h-20 fixed bg-main-bg/90 md:px-10 "
 >
   <div class="header__logo flex flex-grow basis-0">
     <a href="/">
       <LogoWhite />
     </a>
   </div>
-  <nav>
+  <nav class="hidden md:block">
     <ul class="flex [&>li>a]:px-8 [&>li>a]:py-2">
       <li>
         <a
@@ -35,7 +35,7 @@ import Github from "./Icons/Github.astro";
       </li>
     </ul>
   </nav>
-  <nav class="flex flex-grow basis-0 justify-end">
+  <nav class="flex-grow basis-0 justify-end  hidden md:flex">
     <ul
       class="flex text-base [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
     >
