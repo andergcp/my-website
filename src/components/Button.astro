@@ -1,5 +1,7 @@
 ---
-const { id } = Astro.props
+const { btnId } = Astro.props
 ---
 
-<button id={id} class="px-8 py-1 rounded-full bg-titles-dark opacity-95 text-white w-1/2 md:w-1/6"><slot/></button>
+<button id={btnId} class="px-8 py-1 rounded-full bg-titles-dark opacity-95 text-white w-1/2 hover:opacity-70 md:w-1/6">
+  <slot/>
+</button>

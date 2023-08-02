@@ -3,28 +3,26 @@ import ContactInfo from "../Icons/ContactInfo.astro";
 import Message from "../Icons/Message.astro";
 import Download from "../Icons/Download.astro";
 import Button from "../Button.astro";
-import Section from "./Section.astro";
-import Link from "../Link.astro";
 import SectionTitle from "../SectionTitle.astro";
 ---
 {/* This is an astro component to talk about me */}
 <section id="about_me" class='section-component'>
   <div class="flex flex-col px-section space-y-2 py-10 text-lg">
-    <div class="flex flex-col space-y-8 items-center pb-10 md:items-end md:justify-end md:flex-row md:space-y-0 md:space-x-8 md:border-b-[1px] xl:pr-[10%] 2xl:pr-[20%]">
-      <a class="w-fit lg:w-2/8" href="#contact">
-        <div class="flex space-x-2 items-center">
+    <div class="flex flex-col space-y-8 items-center pb-10 [&>a>div]:flex [&>a>div]:space-x-2 [&>a>div]:items-center [&>a]:md:items-end [&>a>div:hover]:text-xl md:justify-end md:flex-row md:space-y-0 md:space-x-8 md:border-b-[1px] xl:pr-[10%] 2xl:pr-[20%]">
+      <a class="lg:w-2/8" href="#contact">
+        <div>
           <ContactInfo/>
           <span>Información de contacto</span>
         </div>
       </a>
-      <a class="w-fit" href="#contact">
-        <div class="flex space-x-2 items-center">
+      <a href="#contact">
+        <div>
           <Message/>
           <span>Enviar mensaje</span>
         </div>
       </a>
-      <a class="w-fit" target="_blank" href="https://andergcp.s3.amazonaws.com/public/CV+-+Anderson+Castiblanco.pdf">
-        <div class="flex space-x-2 items-center">
+      <a target="_blank" href="https://andergcp.s3.amazonaws.com/public/CV+-+Anderson+Castiblanco.pdf">
+        <div>
           <Download/>
           <span>Descargar CV</span>
         </div>
@@ -37,7 +35,8 @@ import SectionTitle from "../SectionTitle.astro";
       <br>
       <span class="hidden more_about_me_text">Disfruto aprender sobre programación, idiomas, culturas, negocios, startups, diseño de producto e innovación.</span>
       <span class="hidden more_about_me_text">Me encanta compartir tiempo con mi familia y amigos, viajar, leer y montar bici.</span>
-      <Button id="show_more_button">Ver más</Button>
+      <span class="hidden more_about_me_text">Hablo español(nativo), inglés(C1) y Francés(A2) .</span>
+      <Button btnId="about_me_show_more">Ver más</Button>
     </div>
   </div>
 </section>
@@ -46,10 +45,10 @@ import SectionTitle from "../SectionTitle.astro";
   // This is an script to show more information about me when the user clicks the button
   function showMore() {
     const aboutMeTextEls = document.querySelectorAll('.more_about_me_text');
-    const showMoreButton = document.getElementById('show_more_button');
+    const showMoreButton = document.getElementById('about_me_show_more');
     aboutMeTextEls.forEach(el => el.classList.remove('hidden'));
     showMoreButton?.classList.add('hidden');
   }
-  const showMoreButton = document.getElementById('show_more_button');
+  const showMoreButton = document.getElementById('about_me_show_more');
   showMoreButton?.addEventListener('click', showMore);
 </script>

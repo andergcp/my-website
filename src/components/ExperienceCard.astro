@@ -1,7 +1,8 @@
 ---
-const {experience} = Astro.props
+import Button from './Button.astro';
+const {experience, idx} = Astro.props
+const showMoreButtonId:string = `experience_show_more${idx}`;
 ---
-<!-- Card component for showing my working experience -->
 <li class="flex flex-col [&>div]:p-4 shadow-lg md:[&>div]:p-8 md:flex-row">
   <div class="bg-tertiary-bg md:w-1/4">
     <h2 class="text-lg font-semibold">{experience.company}</h2>
@@ -10,19 +11,37 @@ const {experience} = Astro.props
   <div class="bg-main-bg md:w-3/4 [&>ul]:px-4">
     <h3 class="font-semibold">{experience.title}</h3>
     <p class="text-sm">{experience.description}</p>
-    <br>
-    <h3 class="font-semibold">Funciones</h3>
-    <ul class="list-disc">
+    <br class="hidden">
+    <h3 class="font-semibold hidden">Funciones</h3>
+    <ul class=`list-disc hidden more_experience_text${idx}`>
       {experience.functions.map((f: string) => (
         <li class="text-sm">{f}</li>
       ))} 
     </ul>
-    <br>
-    <h3 class="font-semibold">Logros</h3>
-    <ul class="list-disc">
+    <br class=`hidden more_experience_text${idx}`>
+    <h3 class=`font-semibold hidden more_experience_text${idx}`>Logros</h3>
+    <ul class=`list-disc hidden more_experience_text${idx}`>
       {experience.achievements.map((a: string) => (
         <li class="text-sm">{a}</li>
       ))}
     </ul>
+    <div class="flex justify-center md:justify-start pt-4">
+      <Button btnId={showMoreButtonId} class='experience_show_more'>Ver más</Button>
+    </div>
   </div>
 </li>
+
+<!-- <script>
+  // This is an script to show more information about me when the user clicks the button
+  const aboutMeTextElsClass: string = `.more_experience_text${idx}`;
+  const showMoreButtonId:string = `experience_show_more${idx}`;
+  function showMore() {
+    const aboutMeTextEls = document.querySelectorAll(aboutMeTextElsClass);
+    alert('Hole')
+    const showMoreButtons = document.querySelectorAll('.experience_show_more');
+    aboutMeTextEls.forEach(el => el.classList.remove('hidden'));
+    showMoreButtons.forEach(el => el.classList.add('hidden'));
+  }
+  const showMoreButtonExp = document.querySelectorAll('.experience_show_more');
+  showMoreButtonExp?.addEventListener('click', showMore);
+</script> -->

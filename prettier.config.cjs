@@ -9,12 +9,12 @@ module.exports = {
 	useTabs: true,
 	overrides: [
 		{
-			files: ['*.json', '*.md', '*.toml', '*.yml'],
+			files: ['*.json', '*.md', '*.toml', '*.yml', '*astro'],
 			options: {
-				useTabs: false
+				parser: 'astro'
 			}
 		}
 	],
 	endOfLine: 'lf',
-	plugins: ['prettier-plugin-tailwindcss']
+	plugins: ['prettier-plugin-tailwindcss', 'prettier-plugin-astro']
 }

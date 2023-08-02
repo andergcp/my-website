@@ -1,107 +1,13 @@
 ---
-import ExperienceCard from "../ExperienceCard.astro";
+import ExperienceCard from "../ExperienceCard";
+import ExperienceList from "../ExperienceList";
+// import ExperienceCard from "../ExperienceCard.astro";
 import SectionTitle from "../SectionTitle.astro";
-  
-const experienceList = [
-  {
-    title: "Mid-Software Developer",
-    description: "Job description",
-    achievements: [
-      "Desarrollé la integración desde cero con el proveedor de facturación electrónica (Siigo), automatizando el proceso de facturación, ahorrando más de 5 días de trabajo al mes al equipo de finanzas",
-      "Desarrollé la integración para la sincronización de la actividad de los usuarios entre Pandas y Clevertap, lo que ayudó al equipo de Growth a crear mejores campañas basadas en el comportamiento de cada usuario",
-      "Implementé soluciones usando patrones de diseño en un arquitectura orientada a eventos, usando servicios de GCP como Cloud Functions, Cloud Tasks, y Pubsub",
-],
-    functions: [
-      "Construir nuevas funcionalidades para el back-office, tanto en el back-end como en el front-end, usando NestJs, Typescript, NextJs y React",
-      "Construir y mejorar las características del e-commerce de la empresa, con buenas prácticas y creciendo de forma eficiente, usando herramientas como Storybook y Styled components",
-      "Desarrollar soluciones usando bases de datos NoSQL como Firestores y Mongo",
-      "Desarrollar características para aplicaciones basadas en la nube usando los servicios de GCP",
-      "Aplicar patrones de diseño y tácticas de arquitectura en arquitecturas dirigidas a eventos y basadas en micro-servicios",],
-    company: "Pandas",
-    startDate: "2022",
-    endDate: "2023",
-  },
-  {
-    title: "Software Engineer",
-    description: "Job description",
-    achievements: [
-      "Solucionar bugs de la plataforma. Lenguajes: Java, React, Postgresql y Snowflake, desplegado en servidores de los clientes o en AWS",
-      "Escribir código y tests de alta calidad para mejorar la plataforma Learn en el back-end de Java y en el front- end de React y Angular",
-      "Participar y promover buenas prácticas de desarrollo incluyendo revisiones de diseño, revisiones de código y participando activamente en la reuniones de Scrum",
-      "Desempeñar mi rol usando herramientas como Git, Jira, Bitbucket y Confluence",
-    ],
-    functions: [],
-    company: "Blackboard",
-    startDate: "2020",
-    endDate: "2022",
-  },
-  {
-    title: "Full-Stack Software Engineer",
-    description: "Job description",
-    achievements: [],
-    functions: [],
-    company: "Holberton School",
-    startDate: "2020",
-    endDate: "2020",
-  },
-  {
-    title: "Monitor - Teaching Assistant",
-    description: "Job description",
-    achievements: [],
-    functions: [],
-    company: "Holberton School",
-    startDate: "2020",
-    endDate: "2020",
-  },
-  {
-    title: "Administrador - propietario",
-    description: "Job description",
-    achievements: [],
-    functions: [],
-    company: "Mayorista de Helados Caspri",
-    startDate: "2017",
-    endDate: "2020",
-  },
-  {
-    title: "Analista de producto - Crédito de vehículo personal",
-    description: "Job description",
-    achievements: [],
-    functions: [],
-    company: "Banco Davivienda",
-    startDate: "2017",
-    endDate: "2017",
-  },
-  {
-    title: "Profesional Comercial Daviplata",
-    description: "Job description",
-    achievements: [],
-    functions: [],
-    company: "Banco Davivienda",
-    startDate: "2015",
-    endDate: "2017",
-  },
-  {
-    title: "Practicante Universitario - Captación Banca Personal",
-    description: "Job description",
-    achievements: [],
-    functions: [],
-    company: "Banco Davivienda",
-    startDate: "2015",
-    endDate: "2015",
-  },
-];
 ---
 {/* This is an astro component to talk about my professional experience */}
 <section id="experience" class='section-component'>
   <div class="flex flex-col px-section space-y-6 py-10 bg-secondary-bg">
     <SectionTitle>Experiencia</SectionTitle>
-    <ul class="flex flex-col space-y-4 md:space-y-8">
-      {
-        experienceList.map((experience) => (
-          // <ExperienceCard {...experience} client:load/> // This was using a react component
-          <ExperienceCard {experience}/>
-        ))
-      }
-    </ul>
+    <ExperienceList client:load/>
   </div>
 </section>
